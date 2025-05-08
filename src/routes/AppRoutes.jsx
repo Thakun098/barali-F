@@ -8,13 +8,14 @@ import AdminLayout from '../layouts/admin/AdminLayout';
 // Main Routes
 import HomePage from '../pages/main/home/HomePage';
 import LoginPage from '../pages/main/auth/LoginPage';
+import AuthLayout from '../layouts/auth/AuthLayout';
 
 // Auth Routes
-import MyBookingPage from '../pages/auth/MyBookingPage'
+import MyBookingPage from '../pages/auth/MyBookingPage';
 
 // Admin Routes
 import DashBoardPage from '../pages/admin/dashboard/DashBoardPage';
-import AuthLayout from '../layouts/auth/AuthLayout';
+
 
 const AppRoutes = () => {
     return (

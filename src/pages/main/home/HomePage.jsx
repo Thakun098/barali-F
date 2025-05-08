@@ -1,8 +1,10 @@
+import Accommodation from "../../../components/accommodation/Accommodation"
+
 const HomePage = () => {
     return (
-        <div>
-            HomePage
-        </div>
+        <>
+            <Accommodation />
+        </>
     )
 }
 
