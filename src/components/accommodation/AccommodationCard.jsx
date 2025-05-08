@@ -3,10 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const AccommodationCard = ({ accommodation }) => {
+    const imageName = accommodation.image_name;
     return (
         <div className='col-md-4 md-4'>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="http://localhost:5000/uploads/accommodations/demo1" />
+            <Card.Img variant="top" src={`http://localhost:5000/uploads/accommodations/${imageName}`} />
                 <Card.Body>
                     <Card.Title>{accommodation.name}</Card.Title>
                     <Card.Text>
