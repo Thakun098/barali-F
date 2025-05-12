@@ -1,34 +1,46 @@
-import React from 'react'
 
 const HeroImage = () => {
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
+    const heroImage = `${BASE_URL}/uploads/heroimages/`;
+    const imageStyle = {
+        width: "100%",
+        height: "75vh",
+        objectFit: "cover",
+        objectPosition: "center",
+    };
     return (
         <div>
             {/* Hero Carousel */}
-            < div id="heroCarousel" className="carousel slide carousel-slide m-4" data-bs-ride="carousel" >
+            < div id="heroCarousel" className="carousel slide carousel-slide" data-bs-ride="carousel"
+            >
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="https://picsum.photos/1400/400?random=1" className="d-block w-100" alt="Resort 1" />
+                        <img src={`${heroImage}/hero1.jpg`} className="d-block w-100" alt="Resort 1"
+                            style={imageStyle} />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>พักผ่อนสุดหรูริมชายหาด</h2>
                             <p>สัมผัสธรรมชาติอย่างแท้จริงในรีสอร์ทระดับพรีเมียม</p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src="https://picsum.photos/1400/400?random=2" className="d-block w-100" alt="Resort 2" />
+                        <img src={`${heroImage}/hero2.jpg`} className="d-block w-100" alt="Resort 2"
+                            style={imageStyle} />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>ห้องพักหลากหลายสไตล์</h2>
                             <p>เลือกห้องที่เหมาะกับไลฟ์สไตล์ของคุณ</p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src="https://picsum.photos/1400/400?random=3" className="d-block w-100" alt="Resort 3" />
+                        <img src={`${heroImage}/hero3.jpg`} className="d-block w-100" alt="Resort 3"
+                            style={imageStyle} />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>ผ่อนคลายกับสปาระดับโลก</h2>
                             <p>ฟื้นฟูร่างกายและจิตใจในทุกช่วงเวลา</p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src="https://picsum.photos/1400/400?random=4" className="d-block w-100" alt="Resort 4" />
+                        <img src={`${heroImage}/hero4.jpg`} className="d-block w-100" alt="Resort 4"
+                            style={imageStyle} />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>สระว่ายน้ำวิวทะเล</h2>
                             <p>วิวหลักล้าน ที่คุณไม่ควรพลาด</p>

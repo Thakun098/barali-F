@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ const MainNavbar = ({ isUser, logout }) => {
     return (
 
         <>
-            <Navbar expand="lg" bg="primary" data-bs-theme="dark">
+            <Navbar expand="lg" bg="light" data-bs-theme="light">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <img
@@ -27,7 +26,7 @@ const MainNavbar = ({ isUser, logout }) => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="me-auto ">
                             <Nav.Link href="/">หน้าแรก</Nav.Link>
                             <Nav.Link href="#pricing">วิลล่า</Nav.Link>
                             <Nav.Link href="#pricing">โลเคชั่น</Nav.Link>
@@ -36,11 +35,11 @@ const MainNavbar = ({ isUser, logout }) => {
                         <Nav>
                             {isUser ? (
                                 <div className="d-flex align-items-center gap-3">
-                                    <Navbar.Text className="text-light">
+                                    <Navbar.Text className="text-dark">
                                         <span className="fw-bold">{isUser.name} {isUser.lastname}</span>
                                     </Navbar.Text>
                                     <Button
-                                        variant="outline-light"
+                                        variant="outline-dark"
                                         as={Link}
                                         onClick={logout}
                                         to="/"
