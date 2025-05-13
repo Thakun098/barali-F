@@ -1,18 +1,17 @@
-import { useAuth } from "../hooks/useAuth"
-import AuthService from "../services/auth/auth.service"
-import { Navigate } from "react-router-dom"
+import React from "react";
+import { UseAuth } from "../hooks/UseAuth";
+import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ children, roles }) => {
-    const { isUser } = useAuth();
+const ProtectedRoute = ({children, roles}) => {
+    const { isUser } = UseAuth();
 
-    if (!isUser) return <Navigate to="/" replace />
+    if(!isUser) return <Navigate to="/" replace />
 
-    if (!roles || roles.length === 0) return children;
+    if(!roles || roles.length === 0) return children;
 
     const hasRequireRole = isUser.roles.some(role => roles.includes(role));
-    if (!hasRequireRole) return <Navigate to="/" replace />
+    if(!hasRequireRole) return <Navigate to="/" replace />
 
-    return children;
+  return children;
 }
-
 export default ProtectedRoute

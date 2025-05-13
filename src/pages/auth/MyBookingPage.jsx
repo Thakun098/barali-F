@@ -1,11 +1,6 @@
-import React from 'react'
-
 const MyBookingPage = () => {
   return (
-    <div>
-      MyBookingPage
-    </div>
+    <div>MyBookingPage</div>
   )
 }
-
 export default MyBookingPage

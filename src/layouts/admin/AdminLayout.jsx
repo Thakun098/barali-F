@@ -1,20 +1,16 @@
-import Navbar from "./NavBar";
+import Navbar from "./Navbar";
 import ProtectedRoute from "../../middleware/ProtectedRoute";
+import { UseAuth } from "../../hooks/UseAuth";
 import { Outlet } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
 
 const AdminLayout = () => {
-    const { isUser, logout } = useAuth();
+    const { isUser, logOut } = UseAuth();
 
     return (
         <ProtectedRoute roles={["ROLE_ADMIN", "ROLE_MODERATOR"]}>
-            <Navbar isUser={isUser} logout={logout} />
-
-            <main className="container">
-                <Outlet />
-            </main>
+            <Navbar isUser={isUser} logOut={logOut} />
+            <Outlet />
         </ProtectedRoute>
     )
 }
-
 export default AdminLayout

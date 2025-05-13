@@ -1,18 +1,25 @@
 import axios from "axios";
+import AuthHeader from "../../common/AuthHeader";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-import useAuthHeader from "../../common/authHeader";
 
-const getAll = () => {
-    return axios.get(`${BASE_URL}/api/accommodation`, { headers: useAuthHeader() });
-}
+
+const getPopularAccommodation = () => {
+    
+    return axios.get(`${BASE_URL}/api/accommodation/popular`);
+};
 
 const getPromotion = () => {
-    return axios.get(`${BASE_URL}/api/accommodation/promotion`)
-}
+    return axios.get(`${BASE_URL}/api/accommodation/promotion`);
+};
+
+const getAll = () => {
+    return axios.get(`${BASE_URL}/api/accommodation`, { headers: AuthHeader() });
+};
+
 const AccommodationService = {
-    getAll,
     getPromotion,
+    getAll,
+    getPopularAccommodation,
 }
 
 export default AccommodationService;
-

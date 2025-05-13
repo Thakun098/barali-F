@@ -1,11 +1,6 @@
-
-
-const DashBoardPage = () => {
-    return (
-        <div>
-            DashBoardPage
-        </div>
-    )
+const DashboardPage = () => {
+  return (
+    <div>DashboardPage</div>
+  )
 }
-
-export default DashBoardPage
+export default DashboardPage

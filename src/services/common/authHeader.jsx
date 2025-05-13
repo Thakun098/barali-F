@@ -1,12 +1,17 @@
-const useAuthHeader = () => {
-    const isUser = JSON.parse(localStorage.getItem("user"))
+// AuthHeader.jsx
+import AuthService from "../auth/auth.service";
 
-    if (isUser && isUser.accessToken) {
-        return { 'x-access-token': isUser.accessToken };
-    }
-    else {
-        return {};
-    }
-}
+const AuthHeader = () => {
+  const isUser = AuthService.getCurrentUser();
 
-export default useAuthHeader;
+  if (isUser && isUser.accessToken) {
+    // return {
+    //   Authorization: `Bearer ${isUser.accessToken}`,
+    // };
+    return { 'x-access-token': isUser.accessToken };
+  } else {
+    return {};
+  }
+};
+
+export default AuthHeader;
